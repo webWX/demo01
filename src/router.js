@@ -1,0 +1,40 @@
+import Vue from 'vue';
+import Router from 'vue-router';
+
+const Home = () => import(/* webpackChunkName: "home" */ '@/views/Home.vue');
+const Waiting = () => import(/* webpackChunkName: "bank" */ '@/views/bank/Waiting.vue');
+const AccountResult = () => import(/* webpackChunkName: "bank" */ '@/views/bank/AccountResult.vue');
+
+Vue.use(Router);
+
+export default new Router({
+  routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: Home,
+      meta: {
+        title: '首页',
+        is_check_token: false
+      }
+    },
+    {
+      path: '/waiting',
+      name: 'waiting',
+      component: Waiting,
+      meta: {
+        title: '等待页面',
+        is_check_token: true
+      }
+    },
+    {
+      path: '/account_result',
+      name: 'account_result',
+      component: AccountResult,
+      meta: {
+        title: '开户',
+        is_check_token: true
+      }
+    }
+  ]
+});
