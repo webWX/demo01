@@ -5,10 +5,13 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-
+    num: 0
   },
   mutations: {
-
+    add(state) {
+      state.num++;
+      console.log(111);
+    }
   },
   actions: {
 

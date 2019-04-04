@@ -29,7 +29,7 @@
     </li>
     <li class="result-item">
       <span class="result-tit">到期时间</span>
-      <span class="result-cont">90.00元</span>
+      <span class="result-cont">{{ 20 }}元</span>
     </li>
   </ul>
   <template v-if="is_open_balance">
@@ -72,6 +72,8 @@
 </template>
 
 <script>
+import {mapState} from 'vuex';
+
 export default {
   name: 'invest_result',
   props: {
@@ -213,7 +215,7 @@ $baseUrl: '../../assets/images/';
   }
 }
 
-@svg 1px-border { 
+@svg 1px-border {
   height: 2px;
   @rect {
     fill: var(--color, black);
@@ -221,6 +223,7 @@ $baseUrl: '../../assets/images/';
     height: 50%;
   }
 }
+
 .border-1px { border-top: 1px solid transparent; border-image: svg(1px-border param(--color #ccc)) 2 2 stretch; }
 
 .border-1px {
