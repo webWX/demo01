@@ -5,6 +5,8 @@ const Home = () => import(/* webpackChunkName: "home" */ '@/views/Home.vue');
 const Waiting = () => import(/* webpackChunkName: "bank" */ '@/views/bank/Waiting.vue');
 const AccountResult = () => import(/* webpackChunkName: "bank" */ '@/views/bank/AccountResult.vue');
 
+const InvestResult = () => import(/* webpackChunkName: "bank" */ '@/components/InvestResult/InvestResult.vue');
+
 Vue.use(Router);
 
 export default new Router({
@@ -33,6 +35,15 @@ export default new Router({
       component: AccountResult,
       meta: {
         title: '开户',
+        is_check_token: true
+      }
+    },
+    {
+      path: '/invest_result',
+      name: 'invest_result',
+      component: InvestResult,
+      meta: {
+        title: '投资结果',
         is_check_token: true
       }
     }
