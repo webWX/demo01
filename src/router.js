@@ -7,6 +7,8 @@ const AccountResult = () => import(/* webpackChunkName: "bank" */ '@/views/bank/
 
 const InvestResult = () => import(/* webpackChunkName: "bank" */ '@/components/InvestResult/InvestResult.vue');
 
+const StandardDetail = () => import(/* webpackChunkName: "product" */ '@/views/standard/StandardDetail.vue');
+
 Vue.use(Router);
 
 export default new Router({
@@ -45,6 +47,15 @@ export default new Router({
       meta: {
         title: '投资结果',
         is_check_token: true
+      }
+    },
+    {
+      path: '/standard/detail/:id',
+      name: 'standard_detail',
+      component: StandardDetail,
+      meta: {
+        title: '散标详情',
+        is_check_token: false
       }
     }
   ]

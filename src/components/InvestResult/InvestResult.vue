@@ -72,7 +72,7 @@
 </template>
 
 <script>
-import {mapState} from 'vuex';
+// import { mapState } from 'vuex';
 
 export default {
   name: 'invest_result',
@@ -224,7 +224,10 @@ $baseUrl: '../../assets/images/';
   }
 }
 
-.border-1px { border-top: 1px solid transparent; border-image: svg(1px-border param(--color #ccc)) 2 2 stretch; }
+.border-1px {
+  border-top: 1px solid transparent;
+  border-image: svg(1px-border param(--color #ccc)) 2 2 stretch;
+}
 
 .border-1px {
   // background: white svg(square param(--color #ccc));

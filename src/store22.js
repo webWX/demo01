@@ -5,7 +5,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    num: 0
+    num: 0,
+    platform: 'ios'
   },
   mutations: {
     add(state) {
@@ -14,6 +15,5 @@ export default new Vuex.Store({
     }
   },
   actions: {
-
   }
 });
