@@ -51,7 +51,7 @@
             <div class="input-tit">出借金额</div>
             <div class="input-row">
               <div class="input-block">
-                <input type="number" class="input" :placeholder="standardDetailLoan.join_condition">
+                <input type="number" class="input" :placeholder="standardDetailLoan.join_condition" />
               </div>
               <button class="btn-primary">最大金额</button>
               <div class="tooltip--container">
@@ -301,7 +301,7 @@ export default {
         color: #f60;
       }
     }
-    .protocol-cotainer {
+    .protocol-container {
       padding: 28px 32px 0;
     }
     .protocol-wrapper {
