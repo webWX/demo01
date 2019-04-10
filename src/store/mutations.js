@@ -6,6 +6,10 @@ const mutations = {
   },
   [types.TOKEN_CHECK](state, payload) {
     state.isToken = payload;
+  },
+  [types.USER_INFO](state, payload) {
+    console.log(payload);
+    state.userInfo = payload;
   }
 };
 

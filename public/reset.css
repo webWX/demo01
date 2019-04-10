@@ -30,7 +30,12 @@ b {
   font-weight: normal;
 }
 
-ul {
+em {
+  font-style: normal;
+}
+
+ul, ol {
+  margin: 0;
   padding: 0;
 }
 

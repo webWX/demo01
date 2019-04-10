@@ -1,25 +1,25 @@
 <template>
   <section class="product product--standard-detail">
     <v-header class="header--standard" :titleName="titleName" v-if="!$store.state.isApp"></v-header>
-    <div class="detail__container" :class="{'is-app': $store.state.isApp}" v-if="standardDetailLoan">
+    <div class="detail__container" :class="{'is-app': $store.state.isApp}">
       <div class="product-info-wrapper">
         <div class="info-cotainer">
           <div class="info-content">
-            <span class="info-cont"><b>{{ standardDetailLoan.interest_rate }}</b><em class="rate">%</em></span>
+            <span class="info-cont"><b>9.0</b><em class="rate">%</em></span>
             <span class="info-desc">往期年化收益率</span>
           </div>
           <div class="info-content">
-            <span class="info-cont"><b>{{ standardDetailLoan.loan_period }}</b><em>个月</em></span>
-            <span class="info-desc">项目期限</span>
+            <span class="info-cont"><b>12</b><em>个月</em></span>
+            <span class="info-desc">往期年化收益率</span>
           </div>
         </div>
         <ul class="product-info-lists">
-          <li class="product-info-item border-right-1px">
-            <span class="info-cont">{{ standardDetailLoan.unmatched_amount }}</span>
+          <li class="product-info-item">
+            <span class="info-cont">100000.00</span>
             <span class="info-tit">剩余可投金额(元)</span>
           </li>
-          <li class="product-info-item border-right-1px">
-            <span class="info-cont">{{ standardDetailLoan.loan_amount }}</span>
+          <li class="product-info-item">
+            <span class="info-cont">100000.00</span>
             <span class="info-tit">项目总额(元)</span>
           </li>
           <li class="product-info-item">
@@ -42,8 +42,8 @@
         <div class="product-input-wrapper">
           <div class="input-item border-bottom-1px">
             <div class="input-tit">可用余额</div>
-            <div class="input-content" v-if="userInfo">
-              <span class="cont-text">{{ userInfo.available_total_money }}元</span>
+            <div class="input-content">
+              <span class="cont-text">9,9306.23元</span>
               <a href="javascript:;" class="btn-primary">充值</a>
             </div>
           </div>
@@ -51,9 +51,9 @@
             <div class="input-tit">出借金额</div>
             <div class="input-row">
               <div class="input-block">
-                <input type="number" class="input" :placeholder="standardDetailLoan.join_condition">
+                <input type="number" class="input" placeholder="100元起">
               </div>
-              <button class="btn-primary">最大金额</button>
+              <a href="javascript:;" class="btn-primary">最大金额</a>
               <div class="tooltip--container">
                 <div class="tooltip--text">往期年化收益：100.00元</div>
                 <div class="tooltip--tip"></div>
@@ -87,9 +87,9 @@
 
 <script>
 import Header from '@/components/Header/Header';
-import { mapState, createNamespacedHelpers } from 'vuex';
+import { createNamespacedHelpers } from 'vuex';
 
-const { mapState: mapStateProduct, mapActions: mapActionsProduct } = createNamespacedHelpers('product');
+const { mapActions } = createNamespacedHelpers('product');
 
 export default {
   name: 'standard_detail',
@@ -99,23 +99,18 @@ export default {
     };
   },
   computed: {
-    ...mapStateProduct({
-      standardDetailLoan: state => state.standardDetailLoan
-    }),
-    ...mapState({
-      userInfo: state => state.userInfo
-    }),
     _id() {
       return this.$route.params.id;
     }
   },
   methods: {
-    ...mapActionsProduct(['getStandardDetail'])
+    ...mapActions(['getStandardDetail'])
   },
   created() {
-    this.getStandardDetail({
-      loan_id: this._id
-    });
+    console.log(this.$route);
+    // this.getStandardDetail({
+    // loan_id: this._id
+    // });
   },
   components: {
     'v-header': Header

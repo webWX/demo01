@@ -19,9 +19,23 @@
   }
 }
 
+@svg 1px-border-left {
+  width: 2px;
+  @rect {
+    fill: var(--color, black);
+    width: 50%;
+    height: 100%;
+  }
+}
+
 .border-bottom-1px {
   border-bottom: 1px solid transparent;
   border-image: svg(1px-border param(--color #e5e5e5)) 2 2 stretch;
+}
+
+.border-right-1px {
+  border-right: 1px solid transparent;
+  border-image: svg(1px-border-left param(--color #f7f7f7)) 2 2 stretch;
 }
 
 /*

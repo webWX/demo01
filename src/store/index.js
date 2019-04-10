@@ -21,7 +21,8 @@ const state = {
   platform,
   isApp: !!platform,
   token: Cookies.get('token'),
-  isToken: false
+  isToken: false,
+  userInfo: null
 };
 
 const store = new Vuex.Store({
