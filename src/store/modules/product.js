@@ -14,6 +14,9 @@ const mutations = {
 };
 
 const actions = {
+  /**
+   * 散标详情
+   **/
   getStandardDetail({ commit, rootState }, payload) {
     standardDetail(payload).then(res => {
       console.log(res);

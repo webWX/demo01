@@ -14,6 +14,8 @@
 <script>
 import { mapState, mapMutations, mapActions, mapGetters } from 'vuex';
 
+import { openDepositoryLayer } from '@/assets/js/layer';
+
 export default {
   name: 'home',
   computed: {
@@ -75,6 +77,10 @@ export default {
   },
   created() {
     this.tokenCheck();
+
+    openDepositoryLayer().then(() => {
+      console.log('res');
+    });
   }
 };
 </script>

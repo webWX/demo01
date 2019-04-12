@@ -52,3 +52,44 @@
 .header__btn--text {
   font-size: 28px !important;
 }
+
+/*
+ * mint-ui -- messagebox
+ */
+.mint-msgbox {
+  border-radius: 16px !important;
+  box-shadow: 0 0 45px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+.mint-msgbox-content {
+  padding: 0 !important;
+}
+
+.base-layer-wrapper {
+
+}
+
+.base-layer-wrapper .title {
+  padding-left: 25px;
+  height: 80px;
+  line-height: 80px;
+  text-align: left;
+  font-size: 30px;
+  color: #999;
+  border-bottom: 1px solid transparent;
+  border-image: svg(1px-border param(--color #e5e5e5)) 2 2 stretch;
+}
+
+.base-layer-wrapper .text {
+  margin-bottom: 34px;
+  font-size: 30px;
+  color: #333;
+}
+
+.base-layer-wrapper .description {
+  padding: 0 128px 0 117px;
+  line-height: 32px;
+  text-align: left;
+  font-size: 24px;
+  color: #999;
+}
