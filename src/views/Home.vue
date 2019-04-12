@@ -4,7 +4,7 @@
     <button @click="increment3">increment3</button>
     <div>platform -- {{ platform }}</div>
 
-    <div v-if="platform">app</div>
+    <div v-if="platform">app: {{ isApp }} -- wechat: {{ isWechat }}</div>
     <div v-else>platform: {{ platform }} -- token: {{ token }} -- isToken: {{ isToken }}</div>
 
     <div v-if="isToken">token 存在且有效</div>
@@ -12,16 +12,18 @@
 </template>
 
 <script>
-import { mapState, mapMutations, mapActions } from 'vuex';
+import { mapState, mapMutations, mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'home',
   computed: {
-    ...mapState({
-      platform: state => state.platform,
-      token: state => state.token,
-      isToken: state => state.isToken
-    })
+    // ...mapState({
+    //   platform: state => state.platform,
+    //   token: state => state.token,
+    //   isToken: state => state.isToken
+    // }),
+    ...mapState(['platform', 'token', 'isToken']),
+    ...mapGetters(['isApp', 'isWechat'])
   },
   methods: {
     add1() {

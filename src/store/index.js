@@ -1,29 +1,17 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import actions from './actions';
+import state from './state';
+import getters from './getters';
 import mutations from './mutations';
+import actions from './actions';
 
 import product from './modules/product';
-
-import * as Cookies from 'js-cookie';
 
 Vue.use(Vuex);
 
 // 生产环境不开启严格模式
 const debug = process.env.NODE_ENV !== 'production';
-
-let platform = Cookies.get('platform');
-
-const getters = {};
-
-const state = {
-  platform,
-  isApp: !!platform,
-  token: Cookies.get('token'),
-  isToken: false,
-  userInfo: null
-};
 
 const store = new Vuex.Store({
   modules: {
