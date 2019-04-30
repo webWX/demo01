@@ -10,7 +10,7 @@ export const openDepositoryLayer = () => {
                 <h3 class="title">开通银行存管账户</h3>
                 <p class="text">请开通存管账户</p>
                 <p class="description">银行存管账户用于对用户资金进行独立管理与监督，平台无法触碰，实现平台资金与用户资金隔离。</p>
-              </div>  
+              </div>
             `;
 
   return new Promise((resolve, reject) => {

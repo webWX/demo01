@@ -3,7 +3,7 @@
     <router-link to="/" slot="left" v-if="isShowBackBtn">
       <mt-button icon="back" class="header__btn header__btn--icon"></mt-button>
     </router-link>
-    <mt-button slot="right" class="header__btn header__btn--text">规则</mt-button>
+    <mt-button slot="right" v-if="isShowRightBtn" class="header__btn header__btn--text">规则</mt-button>
   </mt-header>
 </template>
 
@@ -28,6 +28,10 @@ export default {
     titleName: {
       type: String,
       default: ''
+    },
+    isShowRightBtn: {
+      type: Boolean,
+      default: false
     }
   }
 };

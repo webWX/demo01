@@ -57,16 +57,18 @@
  * mint-ui -- messagebox
  */
 .mint-msgbox {
+  padding-bottom: 81px;
   border-radius: 16px !important;
   box-shadow: 0 0 45px 3px rgba(0, 0, 0, 0.1) !important;
 }
 
 .mint-msgbox-content {
   padding: 0 !important;
+  border-bottom: none !important;
 }
 
 .base-layer-wrapper {
-
+  padding-bottom: 40px;
 }
 
 .base-layer-wrapper .title {
@@ -81,6 +83,7 @@
 }
 
 .base-layer-wrapper .text {
+  padding-top: 60px;
   margin-bottom: 34px;
   font-size: 30px;
   color: #333;
@@ -92,4 +95,27 @@
   text-align: left;
   font-size: 24px;
   color: #999;
+}
+
+.mint-msgbox-btns {
+  padding: 0 62px;
+}
+
+.mint-msgbox-btn {
+  width: 265px;
+  height: 88px;
+  line-height: 88px;
+  box-shadow:0 0 18px 0 rgba(51,51,51,0.1);
+  border-radius:6px;
+  font-size: 28px;
+}
+
+.cancel-layer-btn {
+  border-right: none !important;
+  margin-right: 22px !important;
+}
+
+.confirm-layer-btn {
+  background-color: #ff6700 !important;
+  color: #fff !important;
 }

@@ -10,11 +10,16 @@ const actions = {
       tokenCheck().then(res => {
         if (res.code === 0) {
           commit(types.TOKEN_CHECK, true);
+          resolve();
         }
       });
     });
   },
-  vilidateToken({ commit }, payload) {
+  /**
+   * 开通存管
+   */
+  openDepository({ commit }, payload) {
+    // openDepository({})
   },
   increment2({ commit }, payload) {
     console.log(payload);
