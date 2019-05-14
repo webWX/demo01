@@ -6,28 +6,29 @@
     </div>
     <form class="form__container">
       <div class="form__row border-1px input--tel">
-        <i class="form__icon"></i>
-        <input type="number" class="form__input" v-model="userTel" placeholder="请输入手机号码">
-        <div class="tel__container" v-show="userTel">{{ userTel }}</div>
+        <i class="form__icon icon_tel"></i>
+        <input type="tel" class="form__input" v-model="userTel" placeholder="请输入手机号码">
+        <div class="tel__container" v-show="userTel && userTel.length < 11">{{ userTel }}</div>
       </div>
       <div class="form__row border-1px">
-        <i class="form__icon"></i>
-        <input type="number" class="form__input" placeholder="请输入图形验证码">
+        <i class="form__icon icon_imgcode"></i>
+        <input type="text" class="form__input" placeholder="请输入图形验证码">
         <img class="img-code" src="https://dolabank-apk.oss-cn-shenzhen.aliyuncs.com/dolabank/uploads/captcha/1556618384.1932.jpg" alt="">
       </div>
       <div class="form__row border-1px">
-        <i class="form__icon"></i>
+        <i class="form__icon icon_code"></i>
         <input type="number" class="form__input" placeholder="请输入验证码">
         <button class="button button--text border-1px" @click.prevent="getCode">获取验证码</button>
       </div>
       <div class="form__row border-1px">
-        <i class="form__icon"></i>
+        <i class="form__icon icon_pass"></i>
         <input type="text" class="form__input" placeholder="请设置登录密码">
+        <button class="button button-icon"></button>
       </div>
       <div class="recommend__container">
         <div class="form__row border-1px" :class="{'recommend__block': isVisibility}">
-          <i class="form__icon"></i>
-          <input type="number" class="form__input" placeholder="推荐人手机号（选填）">
+          <i class="form__icon ico_recommend"></i>
+          <input type="tel" class="form__input" placeholder="推荐人手机号（选填）">
         </div>
         <button class="recommend-btn" @click.prevent="_toggleRecommendTel">推荐人手机号</button>
       </div>
@@ -113,6 +114,25 @@ export default {
   .form__icon {
     flex: 0 0 48px;
     height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 48px 48px;
+    &.icon_tel {
+      background-image: url("./icon_phone.png");
+    }
+    &.icon_imgcode {
+      background-image: url("./icon_icode.png");
+    }
+    &.icon_code {
+      background-image: url("./icon_vcode.png");
+    }
+    &.icon_pass {
+      background-image: url("./icon_lock.png");
+    }
+    &.ico_recommend {
+      background-image: url("./icon_invite.png");
+      background-size: 32px 32px;
+    }
   }
   .form__input {
     flex: 1;
@@ -172,6 +192,11 @@ export default {
 .protocol__icon {
   flex: 0 0 42px;
   height: 42px;
+  background: url("./check_icon.png") left center no-repeat;
+  background-size: 32px 32px;
+  &.protocol__icon--select {
+    background-image: url("./check_s_icon.png");
+  }
 }
 .protocol__text {
   line-height: 42px;
